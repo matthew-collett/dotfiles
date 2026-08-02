@@ -1,0 +1,43 @@
+onboarding = false
+
+[theme]
+name = "nord"
+
+[keys]
+settings          = "prefix+;"
+reload_config     = "prefix+r"
+goto              = "prefix+s"
+new_workspace     = "prefix+shift+w"
+rename_workspace  = "prefix+$"
+rename_tab        = "prefix+,"
+split_vertical    = "prefix+|"
+zoom              = "prefix+m"
+resize_mode       = "prefix+R"
+
+remove_worktree = "prefix+shift+k"
+navigate_workspace_up   = "ctrl+k"
+navigate_workspace_down = "ctrl+j"
+switch_workspace        = "prefix+shift+1..9"
+
+[[keys.command]]
+key = "prefix+shift+p"
+type = "shell"
+command = "~/scripts/herdr-project.sh"
+description = "New templated workspace"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+prompt_new_tab_name = false
+mouse_scroll_lines = 7
+
+[ui.sound]
+enabled = false
+
+[ui.toast]
+delivery = "herdr"
+
+[session]
+resume_agents_on_restore = true
+
+[experimental]
+pane_history = false

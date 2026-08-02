@@ -1,0 +1,20 @@
+{
+  "showInlineTitle": false,
+  "foldHeading": true,
+  "showLineNumber": false,
+  "useTab": true,
+  "tabSize": 2,
+  "smartIndentList": true,
+  "vimMode": true,
+  "showIndentGuide": false,
+  "promptDelete": false,
+  "propertiesInDocument": "source",
+  "livePreview": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "inbox",
+  "attachmentFolderPath": "attachments",
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": true,
+  "deleteUnlinkedAttachments": "always",
+  "trashOption": "local"
+}

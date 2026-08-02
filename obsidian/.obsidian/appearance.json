@@ -1,0 +1,16 @@
+{
+  "cssTheme": "Poimandres",
+  "showViewHeader": true,
+  "showRibbon": false,
+  "interfaceFontFamily": "JetBrainsMono Nerd Font",
+  "textFontFamily": "JetBrainsMono Nerd Font",
+  "monospaceFontFamily": "JetBrainsMono Nerd Font",
+  "baseFontSize": 16,
+  "translucency": true,
+  "accentColor": "#5db3be",
+  "baseFontSizeAction": true,
+  "nativeMenus": false,
+  "enabledCssSnippets": [
+    "styles"
+  ]
+}

@@ -1,0 +1,36 @@
+/* hide the bottom-left vault help + settings bottom left */
+.workspace-drawer-vault-actions {
+  display: none !important;
+}
+
+/* hide the sync status icon in the status bar */
+.status-bar-item.plugin-sync {
+  display: none !important;
+}
+
+/* hide the backlinks counter in the status bar */
+.status-bar-item.plugin-backlink {
+  display: none !important;
+}
+
+/* hide the reading/edit view toggle top right */
+.view-action[aria-label*="view" i],
+.view-action[aria-label*="reading" i],
+.view-action[aria-label*="editing" i] {
+  display: none !important;
+}
+
+/* hide the tab list chevron top right */
+.workspace-tab-header-tab-list {
+  display: none !important;
+}
+
+/* hide toggle sidebar top left and right */
+.sidebar-toggle-button {
+  display: none !important;
+}
+
+/* hide the navbar top left above file explorer */
+.nav-buttons-container {
+  display: none !important;
+}

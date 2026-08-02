@@ -1,0 +1,5 @@
+.claude
+.omc
+!claude/.claude
+*.local
+*.local.json

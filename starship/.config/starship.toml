@@ -1,0 +1,300 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+# globals
+scan_timeout = 100
+command_timeout = 500
+follow_symlinks = false
+add_newline = true
+palette = "poimandres"
+
+# formats
+format = """
+$directory \
+${custom.giturl}\
+$git_branch\
+${custom.git_worktree}\
+$git_state\
+$git_status\
+$status\
+$cmd_duration\
+$line_break\
+$character\
+"""
+
+right_format = """
+$nodejs$golang$java$python$docker_context\
+$kubernetes\
+$aws\
+$gcloud\
+$azure\
+"""
+
+# directory
+[directory]
+style = "fg:sapphire"
+format = "[\ueaf7 $path]($style)"
+truncation_length = 3
+# truncation_symbol = "…/"
+truncate_to_repo = true
+
+# git
+[custom.giturl]
+description = "Display symbol for remote Git server"
+command = """
+GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
+case "$GIT_REMOTE" in
+  *github*)    echo "\ueba1" ;;
+  *gitlab*)    echo "\uf296" ;;
+  *bitbucket*) echo "\uf171" ;;
+  *)           echo "\uf1d2" ;;
+esac
+"""
+when = "git rev-parse --is-inside-work-tree 2> /dev/null"
+style = "overlay1"
+format = "[at ]($style)[$output](text)[  on ]($style)"
+require_repo = true
+ignore_timeout = true
+
+[custom.git_worktree]
+description = "Show indicator when inside a git worktree"
+command = """
+common_dir=$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)
+git_dir=$(git rev-parse --path-format=absolute --git-dir 2>/dev/null)
+if [ "$common_dir" != "$git_dir" ]; then
+  echo "⛓"
+fi
+"""
+when = "git rev-parse --is-inside-work-tree 2> /dev/null"
+style = "fg:sky bg:surface1"
+format = "([ $output]($style))"
+require_repo = true
+ignore_timeout = true
+
+[git_branch]
+symbol = "\uf418"
+style = "fg:sky bg:surface1"
+format = "[\ue0b6](surface1)[$symbol $branch(:$remote_branch)]($style)"
+
+[git_state]
+style = "fg:sky bg:surface1"
+format = "[ \\($state( $progress_current/$progress_total)\\)]($style)"
+rebase = "rebasing"
+merge = "merging"
+revert = "reverting"
+cherry_pick = "cherry-picking"
+bisect = "bisecting"
+am = "am"
+am_or_rebase = "am/rebase"
+
+[git_status]
+style = "fg:red bg:surface1"
+format = "([ $untracked$staged$modified$renamed$conflicted$ahead_behind]($style))[\ue0b4](surface1) "
+staged     = "+${count}"
+modified   = "!${count}"
+renamed    = "\u00bb${count}"
+deleted    = "-${count}"
+untracked  = "?${count}"
+stashed    = "\u2261${count}"
+conflicted = "\u2716${count}"
+ahead      = "\u21e1${count}"
+behind     = "\u21e3${count}"
+diverged   = "\u21d5\u21e1${ahead_count}\u21e3${behind_count}"
+
+# misc
+[status]
+disabled = false
+symbol = "\u2718"
+success_symbol = "\uf46f"
+format = "[$symbol]($style)"
+success_style = "teal"
+style = "red"
+map_symbol = false
+
+[cmd_duration]
+min_time = 1000
+format = "  [took ](subtext1)[$duration](yellow)"
+
+[character]
+success_symbol = "[❯](teal)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[:](mauve)"
+
+# languages
+[nodejs]
+symbol = "\ued44"
+format = "[$symbol( $version) ]($style)"
+
+[golang]
+symbol = "\ue627"
+format = "[$symbol( $version) ]($style)"
+detect_files = ["go.mod"]
+
+[java]
+symbol = "\ue256"
+format = "[$symbol( $version) ]($style)"
+
+[python]
+symbol = "\ue606"
+format = "[$symbol( $version) ]($style)"
+
+# cloud / contexts
+[docker_context]
+symbol = "\uf308"
+format = "[$symbol $context ]($style)"
+
+[kubernetes]
+disabled = false
+symbol = "\ue81d"
+format = "[$symbol $context(/$namespace) ]($style)"
+
+[kubernetes.context_aliases]
+# "long-context" = "short"
+
+[aws]
+disabled = false
+symbol = "\ue7ad"
+format = "[$symbol $profile ]($style)"
+
+[aws.profile_aliases]
+# "long-profile" = "short"
+
+[azure]
+disabled = false
+symbol = "\uebd8"
+format = "[$symbol $subscription ]($style)"
+
+[azure.subscription_aliases]
+# "long-subscription" = "short"
+
+[gcloud]
+disabled = false
+symbol = "\U000F11F6"
+format = "[$symbol $domain(/$project) ]($style)"
+
+[gcloud.project_aliases]
+# "long-project" = "myproj"
+
+# palettes
+[palettes.poimandres]
+# --- background ---
+crust    = "#171922"
+mantle   = "#1B1E28"
+base     = "#1B1E28"
+surface0 = "#303340"
+surface1 = "#3B4152"
+surface2 = "#506477"
+overlay0 = "#506477"
+overlay1 = "#767C9D"
+overlay2 = "#A6ACCD"
+# --- text ---
+text     = "#E4F0FB"
+subtext0 = "#A6ACCD"
+subtext1 = "#767C9D"
+# --- accents ---
+rosewater = "#FAE4FC"
+flamingo  = "#FCC5E9"
+pink      = "#FCC5E9"
+mauve     = "#D0679D"
+red       = "#D0679D"
+maroon    = "#E4747C"
+peach     = "#FFFAC2"
+yellow    = "#FFFAC2"
+green     = "#5DE4C7"
+teal      = "#5DE4C7"
+sky       = "#ADD7FF"
+sapphire  = "#89DDFF"
+blue      = "#89DDFF"
+lavender  = "#91B4D5"
+
+[palettes.catppuccin_mocha]
+# --- background ---
+crust    = "#11111b"
+mantle   = "#181825"
+base     = "#1e1e2e"
+surface0 = "#313244"
+surface1 = "#45475a"
+surface2 = "#585b70"
+overlay0 = "#6c7086"
+overlay1 = "#7f849c"
+overlay2 = "#9399b2"
+# --- text ---
+text     = "#cdd6f4"
+subtext0 = "#a6adc8"
+subtext1 = "#bac2de"
+# --- accents ---
+rosewater = "#f5e0dc"
+flamingo  = "#f2cdcd"
+pink      = "#f5c2e7"
+mauve     = "#cba6f7"
+red       = "#f38ba8"
+maroon    = "#eba0ac"
+peach     = "#fab387"
+yellow    = "#f9e2af"
+green     = "#a6e3a1"
+teal      = "#94e2d5"
+sky       = "#89dceb"
+sapphire  = "#74c7ec"
+blue      = "#89b4fa"
+lavender  = "#b4befe"
+
+[palettes.tokyonight_night]
+# --- background ---
+crust    = "#16161e"
+mantle   = "#16161e"
+base     = "#1a1b26"
+surface0 = "#292e42"
+surface1 = "#3b4261"
+surface2 = "#414868"
+overlay0 = "#565f89"
+overlay1 = "#737aa2"
+overlay2 = "#9aa5ce"
+# --- text ---
+text     = "#c0caf5"
+subtext0 = "#a9b1d6"
+subtext1 = "#c0caf5"
+# --- accents ---
+rosewater = "#c0caf5"
+flamingo  = "#ff9e64"
+pink      = "#f7768e"
+mauve     = "#bb9af7"
+red       = "#f7768e"
+maroon    = "#f7768e"
+peach     = "#ff9e64"
+yellow    = "#e0af68"
+green     = "#9ece6a"
+teal      = "#7dcfff"
+sky       = "#7dcfff"
+sapphire  = "#7aa2f7"
+blue      = "#7aa2f7"
+lavender  = "#bb9af7"
+
+[palettes.gruvbox_dark]
+# --- background ---
+crust    = "#1d2021"
+mantle   = "#282828"
+base     = "#282828"
+surface0 = "#3c3836"
+surface1 = "#504945"
+surface2 = "#665c54"
+overlay0 = "#7c6f64"
+overlay1 = "#a89984"
+overlay2 = "#bdae93"
+# --- text ---
+text     = "#ebdbb2"
+subtext0 = "#d5c4a1"
+subtext1 = "#fbf1c7"
+# --- accents ---
+rosewater = "#fbf1c7"
+flamingo  = "#fe8019"
+pink      = "#d3869b"
+mauve     = "#d3869b"
+red       = "#cc241d"
+maroon    = "#fb4934"
+peach     = "#fe8019"
+yellow    = "#d79921"
+green     = "#98971a"
+teal      = "#8ec07c"
+sky       = "#8ec07c"
+sapphire  = "#83a598"
+blue      = "#458588"
+lavender  = "#d3869b"

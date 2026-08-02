@@ -1,0 +1,5 @@
+{
+  "commit": { "pattern": "conventional" },
+  "tracker": { "type": "none", "url": "", "statuses": { "pr": "" } },
+  "dirs": { "plans": "", "repos": "", "tidy": [] }
+}
