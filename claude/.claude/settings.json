@@ -36,13 +36,6 @@
       "WebFetch(domain:*.k8s.io)",
       "WebFetch(domain:developer.hashicorp.com)",
       "WebFetch(domain:registry.terraform.io)",
-      "WebFetch(domain:owasp.org)",
-      "WebFetch(domain:cheatsheetseries.owasp.org)",
-      "WebFetch(domain:*.mitre.org)",
-      "WebFetch(domain:csrc.nist.gov)",
-      "WebFetch(domain:nvd.nist.gov)",
-      "WebFetch(domain:cloudsecurityalliance.org)",
-      "WebFetch(domain:www.cisecurity.org)",
       "WebFetch(domain:clickhouse.com)",
       "WebFetch(domain:grpc.io)",
       "WebFetch(domain:protobuf.dev)",
@@ -114,7 +107,7 @@
       "Bash(make *)"
     ]
   },
-  "model": "sonnet",
+  "model": "opus",
   "fallbackModel": [
     "opus",
     "sonnet"
@@ -135,6 +128,10 @@
   "awaySummaryEnabled": true,
   "askUserQuestionTimeout": "never",
   "tui": "fullscreen",
+  "voice": {
+    "enabled": true,
+    "mode": "tap"
+  },
   "autoMemoryEnabled": false,
   "skipWorkflowUsageWarning": true,
   "theme": "dark",
@@ -147,6 +144,7 @@
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": false,
   "useAutoModeDuringPlan": false,
+  "voiceEnabled": true,
   "magneticMode": true,
   "quietMode": true,
   "ignoreLocalFolderWarning": true,
@@ -175,10 +173,5 @@
       "profile": false,
       "promptTime": false
     }
-  },
-  "voiceEnabled": true,
-  "voice": {
-    "enabled": true,
-    "mode": "tap"
   }
 }
