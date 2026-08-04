@@ -10,6 +10,4 @@ cd dotfiles
 stow */
 ```
 
-Machine-specific config can be added via `.local` files: `mjc.config.local.json` (takes
-precedence), `.zshrc.local` (sourced by `.zshrc`), `.zprofile.local` (sourced by `.zprofile`),
-`settings.local.json` (merged with `settings.json`).
+Machine-specific config can be added via `**.local.* files.
