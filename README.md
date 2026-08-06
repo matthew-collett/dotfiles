@@ -11,3 +11,15 @@ stow */
 ```
 
 Machine-specific config can be added via `**.local.* files.
+
+## Obsidian
+
+The obsidian package is excluded from `stow */` and stowed into a vault separately,
+from the repo root:
+
+```sh
+vault=~/path-to-vault
+mkdir -p "$vault/.obsidian"
+stow -d obsidian -t "$vault/.obsidian" .obsidian
+```
+

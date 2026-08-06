@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define custom labels/icons for your workspaces
-SPACE_ICONS=("T" "F" "N" "P" "M" "I" "1" "2" "3")
+SPACE_ICONS=("T" "F" "N" "I" "M" "P" "1" "2" "3")
 # background.color=0x44ffffff \
 
 for i in "${!SPACE_ICONS[@]}"; do

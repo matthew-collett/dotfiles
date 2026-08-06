@@ -6,7 +6,7 @@
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
     sketchybar --set $NAME \
         background.drawing=off \
-        icon.color=0xff89ddff
+        icon.color=0xffcad3f5
 else
     sketchybar --set $NAME \
         background.drawing=off \
