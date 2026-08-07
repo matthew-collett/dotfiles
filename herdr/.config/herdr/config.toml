@@ -3,21 +3,22 @@ onboarding = false
 [theme]
 name = "nord"
 
+auto_switch = false
 [keys]
-settings          = "prefix+;"
-reload_config     = "prefix+r"
-goto              = "prefix+s"
-new_workspace     = "prefix+shift+w"
-rename_workspace  = "prefix+$"
-rename_tab        = "prefix+,"
-split_vertical    = "prefix+|"
-zoom              = "prefix+m"
-resize_mode       = "prefix+R"
+settings = "prefix+;"
+reload_config = "prefix+r"
+goto = "prefix+s"
+new_workspace = "prefix+shift+w"
+rename_workspace = "prefix+$"
+rename_tab = "prefix+,"
+split_vertical = "prefix+|"
+zoom = "prefix+m"
+resize_mode = "prefix+R"
 
 remove_worktree = "prefix+shift+k"
-navigate_workspace_up   = "ctrl+k"
+navigate_workspace_up = "ctrl+k"
 navigate_workspace_down = "ctrl+j"
-switch_workspace        = "prefix+shift+1..9"
+switch_workspace = "prefix+shift+1..9"
 
 [[keys.command]]
 key = "prefix+shift+p"

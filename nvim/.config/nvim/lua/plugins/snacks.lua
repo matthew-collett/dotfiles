@@ -58,7 +58,10 @@ vim.keymap.set("n", "<leader>pg", function() snacks.picker.grep() end, { desc = 
 vim.keymap.set("n", "<leader>ph", function() snacks.picker.help() end, { desc = "Search help tags" })
 vim.keymap.set("n", "<leader>pk", function() snacks.picker.keymaps() end, { desc = "Search keymaps" })
 vim.keymap.set("n", "<leader>th", function() snacks.picker.colorschemes() end, { desc = "Pick colorscheme" })
-vim.keymap.set("n", "<leader>gbr", function() snacks.picker.git_branches() end, { desc = "Pick git branch" })
+
+-- git
+vim.keymap.set("n", "<leader>gB", function() snacks.picker.git_branches() end, { desc = "Pick git branch" })
+vim.keymap.set("n", "<leader>gbl", function() snacks.git.blame_line() end, { desc = "Git blame current line" })
 
 -- misc
 vim.keymap.set("n", "<leader>rn", function() snacks.rename.rename_file() end, { desc = "Rename current file" })

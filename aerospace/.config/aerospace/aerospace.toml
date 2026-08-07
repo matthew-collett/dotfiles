@@ -166,37 +166,37 @@ if.app-name-regex-substring = 'Shottr'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Shottr'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
-run = "move-node-to-workspace T"
-
-[[on-window-detected]]
-if.app-id = 'org.mozilla.firefox'
-run = "move-node-to-workspace F"
-
-[[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace T'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = 'move-node-to-workspace F'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace F'
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = "move-node-to-workspace N"
-
-[[on-window-detected]]
-if.app-id = 'com.edisonmail.edisonmail'
-run = "move-node-to-workspace M"
-
-[[on-window-detected]]
-if.app-id = 'com.apple.mail'
-run = "move-node-to-workspace M"
-
-[[on-window-detected]]
-if.app-id = 'com.spotify.client'
-run = "move-node-to-workspace P"
+run = 'move-node-to-workspace N'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = "move-node-to-workspace I"
+run = 'move-node-to-workspace I'
+
+[[on-window-detected]]
+if.app-id = 'com.edisonmail.edisonmail'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace P'

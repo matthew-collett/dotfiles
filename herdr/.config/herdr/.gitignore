@@ -3,12 +3,4 @@
 *.sock
 session.json
 plugins.json
-
-# Plugin runtime: track only our TOML config, not the downloaded/built plugin
-plugins/*
-!plugins/config/
-plugins/config/*
-!plugins/config/cloudmanic.herdr-plus/
-plugins/config/cloudmanic.herdr-plus/*
-!plugins/config/cloudmanic.herdr-plus/projects/
-!plugins/config/cloudmanic.herdr-plus/quick-actions/
+.plugins.lock

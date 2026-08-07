@@ -16,6 +16,10 @@ lint.linters_by_ft = {
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
     callback = function()
+        -- golangci-lint resolves the module from its working directory, not from the target path
+        if vim.bo.filetype == "go" then
+            lint.linters.golangcilint.cwd = vim.fs.root(0, { "go.work", "go.mod" })
+        end
         lint.try_lint()
     end,
 })
