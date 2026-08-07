@@ -65,11 +65,6 @@
                     "value": 0
                   },
                   {
-                    "name": "hyper_sublayer_h",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
@@ -105,11 +100,6 @@
                   },
                   {
                     "name": "hyper_sublayer_r",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
-                    "name": "hyper_sublayer_h",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -153,11 +143,6 @@
                     "value": 0
                   },
                   {
-                    "name": "hyper_sublayer_h",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
@@ -193,11 +178,6 @@
                   },
                   {
                     "name": "hyper_sublayer_r",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
-                    "name": "hyper_sublayer_h",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -241,11 +221,6 @@
                     "value": 0
                   },
                   {
-                    "name": "hyper_sublayer_h",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
@@ -281,11 +256,6 @@
                   },
                   {
                     "name": "hyper_sublayer_r",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
-                    "name": "hyper_sublayer_h",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -341,11 +311,6 @@
                   },
                   {
                     "name": "hyper_sublayer_r",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
-                    "name": "hyper_sublayer_h",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -486,11 +451,6 @@
                   },
                   {
                     "name": "hyper_sublayer_r",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
-                    "name": "hyper_sublayer_h",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -834,11 +794,6 @@
                     "value": 0
                   },
                   {
-                    "name": "hyper_sublayer_h",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
@@ -1103,11 +1058,6 @@
                   },
                   {
                     "name": "hyper_sublayer_s",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
-                    "name": "hyper_sublayer_h",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -1380,114 +1330,6 @@
                 "to": [
                   {
                     "shell_command": "open raycast://extensions/erics118/file-manager/manage-files"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Hyper Key sublayer \"h\" - Hammerspoon",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_a",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
-                    "name": "hyper_sublayer_w",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
-                    "name": "hyper_sublayer_s",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
-                    "name": "hyper_sublayer_r",
-                    "type": "variable_if",
-                    "value": 0
-                  },
-                  {
-                    "name": "hyper",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Toggle Hyper sublayer h",
-                "from": {
-                  "key_code": "h",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_h",
-                      "value": 1
-                    }
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_h",
-                      "value": 0
-                    }
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_h",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Reload Hammerspoon config",
-                "from": {
-                  "key_code": "r",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "/opt/homebrew/bin/hs -c 'hs.reload()'"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_h",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Rotate wallpaper",
-                "from": {
-                  "key_code": "w",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "/opt/homebrew/bin/hs -c 'require(\"wallpaper\").rotate()'"
                   }
                 ],
                 "type": "basic"
