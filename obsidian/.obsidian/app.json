@@ -16,5 +16,6 @@
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,
   "deleteUnlinkedAttachments": "always",
-  "trashOption": "local"
+  "trashOption": "local",
+  "settingsPopoutWindow": false
 }
