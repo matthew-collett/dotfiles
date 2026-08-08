@@ -9,6 +9,7 @@
   "permissions": {
     "allow": [
       "Read(~/**/.claude/**)",
+      "Read(~/dotfiles/**)",
       "Bash(rg *)",
       "Bash(fd *)",
       "Bash(tree *)",
