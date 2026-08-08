@@ -2,6 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(
   git
+  kubectl
   # zsh-autosuggestions
   zsh-syntax-highlighting
 )
@@ -30,6 +31,12 @@ eval "$(fzf --zsh)"
 source ~/scripts/fzf-git.sh
 
 # starship prompt
+export STARSHIP_CONFIG="$HOME/.config/starship.generated.toml"
+if [[ ! -e $STARSHIP_CONFIG ]] \
+  || [[ $HOME/.config/starship.toml -nt $STARSHIP_CONFIG ]] \
+  || [[ $HOME/.config/starship.local.toml -nt $STARSHIP_CONFIG ]]; then
+  cat $HOME/.config/starship.toml $HOME/.config/starship.local.toml(N) > $STARSHIP_CONFIG
+fi
 eval "$(starship init zsh)"
 
 # next level ls

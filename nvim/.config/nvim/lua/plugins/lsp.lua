@@ -29,13 +29,25 @@ tool_installer.setup({
 
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to definition" })
 
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({
+    virtual_text = false,
+    virtual_lines = { current_line = true },
+    float = { border = "rounded", source = true },
+})
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local blink = require("blink.cmp")
 capabilities = vim.tbl_deep_extend("force", capabilities, blink.get_lsp_capabilities())
 
 vim.lsp.config("*", { capabilities = capabilities })
+
+vim.lsp.config("gopls", {
+    settings = {
+        gopls = {
+            staticcheck = false,
+        },
+    },
+})
 
 vim.lsp.enable({
     "lua_ls",

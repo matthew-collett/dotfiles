@@ -591,7 +591,7 @@
                     "value": 1
                   }
                 ],
-                "description": "Vim: Page Down",
+                "description": "Vim: Page Up",
                 "from": {
                   "key_code": "u",
                   "modifiers": {
@@ -603,7 +603,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "vertical_wheel": 80
+                      "vertical_wheel": -70
                     }
                   }
                 ],
@@ -617,7 +617,7 @@
                     "value": 1
                   }
                 ],
-                "description": "Vim: Page Up",
+                "description": "Vim: Page Down",
                 "from": {
                   "key_code": "i",
                   "modifiers": {
@@ -629,7 +629,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "vertical_wheel": -80
+                      "vertical_wheel": 70
                     }
                   }
                 ],

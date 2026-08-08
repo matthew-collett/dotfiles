@@ -3,7 +3,6 @@ onboarding = false
 [theme]
 name = "nord"
 
-auto_switch = false
 [keys]
 settings = "prefix+;"
 reload_config = "prefix+r"
@@ -18,7 +17,6 @@ resize_mode = "prefix+R"
 remove_worktree = "prefix+shift+k"
 navigate_workspace_up = "ctrl+k"
 navigate_workspace_down = "ctrl+j"
-switch_workspace = "prefix+shift+1..9"
 
 [[keys.command]]
 key = "prefix+shift+p"

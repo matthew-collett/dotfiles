@@ -22,10 +22,9 @@ $character\
 """
 
 right_format = """
-$nodejs$golang$java$python$docker_context\
+$docker_context\
 $kubernetes\
 $aws\
-$gcloud\
 $azure\
 """
 
@@ -38,42 +37,10 @@ truncation_length = 3
 truncate_to_repo = true
 
 # git
-[custom.giturl]
-description = "Display symbol for remote Git server"
-command = """
-GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
-case "$GIT_REMOTE" in
-  *github*)    echo "\ueba1" ;;
-  *gitlab*)    echo "\uf296" ;;
-  *bitbucket*) echo "\uf171" ;;
-  *)           echo "\uf1d2" ;;
-esac
-"""
-when = "git rev-parse --is-inside-work-tree 2> /dev/null"
-style = "overlay1"
-format = "[at ]($style)[$output](text)[  on ]($style)"
-require_repo = true
-ignore_timeout = true
-
-[custom.git_worktree]
-description = "Show indicator when inside a git worktree"
-command = """
-common_dir=$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)
-git_dir=$(git rev-parse --path-format=absolute --git-dir 2>/dev/null)
-if [ "$common_dir" != "$git_dir" ]; then
-  echo "⛓"
-fi
-"""
-when = "git rev-parse --is-inside-work-tree 2> /dev/null"
-style = "fg:sky bg:surface1"
-format = "([ $output]($style))"
-require_repo = true
-ignore_timeout = true
-
 [git_branch]
 symbol = "\uf418"
 style = "fg:sky bg:surface1"
-format = "[\ue0b6](surface1)[$symbol $branch(:$remote_branch)]($style)"
+format = "[at ](overlay1)[\ueba1](text)[  on ](overlay1)[\ue0b6](surface1)[$symbol $branch(:$remote_branch)]($style)"
 
 [git_state]
 style = "fg:sky bg:surface1"
@@ -119,24 +86,6 @@ success_symbol = "[❯](teal)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[:](mauve)"
 
-# languages
-[nodejs]
-symbol = "\ued44"
-format = "[$symbol( $version) ]($style)"
-
-[golang]
-symbol = "\ue627"
-format = "[$symbol( $version) ]($style)"
-detect_files = ["go.mod"]
-
-[java]
-symbol = "\ue256"
-format = "[$symbol( $version) ]($style)"
-
-[python]
-symbol = "\ue606"
-format = "[$symbol( $version) ]($style)"
-
 # cloud / contexts
 [docker_context]
 symbol = "\uf308"
@@ -147,32 +96,15 @@ disabled = false
 symbol = "\ue81d"
 format = "[$symbol $context(/$namespace) ]($style)"
 
-[kubernetes.context_aliases]
-# "long-context" = "short"
-
 [aws]
 disabled = false
 symbol = "\ue7ad"
 format = "[$symbol $profile ]($style)"
 
-[aws.profile_aliases]
-# "long-profile" = "short"
-
 [azure]
 disabled = false
 symbol = "\uebd8"
 format = "[$symbol $subscription ]($style)"
-
-[azure.subscription_aliases]
-# "long-subscription" = "short"
-
-[gcloud]
-disabled = false
-symbol = "\U000F11F6"
-format = "[$symbol $domain(/$project) ]($style)"
-
-[gcloud.project_aliases]
-# "long-project" = "myproj"
 
 # palettes
 [palettes.poimandres]
