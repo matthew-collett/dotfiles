@@ -21,12 +21,7 @@ $line_break\
 $character\
 """
 
-right_format = """
-$docker_context\
-$kubernetes\
-$aws\
-$azure\
-"""
+right_format = "$kubernetes"
 
 # directory
 [directory]
@@ -87,24 +82,29 @@ error_symbol = "[❯](red)"
 vimcmd_symbol = "[:](mauve)"
 
 # cloud / contexts
-[docker_context]
-symbol = "\uf308"
-format = "[$symbol $context ]($style)"
-
 [kubernetes]
 disabled = false
+style = "bold #A78BFA"
 symbol = "\ue81d"
 format = "[$symbol $context(/$namespace) ]($style)"
 
 [aws]
 disabled = false
+style = "bold #FF9900"
 symbol = "\ue7ad"
 format = "[$symbol $profile ]($style)"
 
 [azure]
 disabled = false
+style = "bold #0078D4"
 symbol = "\uebd8"
 format = "[$symbol $subscription ]($style)"
+
+[gcloud]
+disabled = false
+style = "bold #EA4335"
+symbol = "\U000F11F6"
+format = "[$symbol $domain(/$project) ]($style)"
 
 # palettes
 [palettes.poimandres]

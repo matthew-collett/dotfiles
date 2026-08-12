@@ -44,6 +44,18 @@ persistent-workspaces = [
     "I"
 ]
 
+# see: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+T = 'main'
+F = 'main'
+M = 'main'
+N = 'main'
+P = 'main'
+I = 'built-in'
+
 # gaps between windows (inner-*) and between monitor edges (outer-*).
 # possible values:
 # - constant:     gaps.outer.top = 8
@@ -57,7 +69,7 @@ inner.vertical =   10
 outer.left =       10
 outer.bottom =     10
 outer.right =      10
-outer.top = [{ monitor."Dell Monitor" = 45 }, 15]
+outer.top = [{ monitor."Dell Monitor" = 45 }, { monitor."DELL U2412M" = 45 }, 15]
 
 
 # 'main' binding mode declaration
@@ -127,8 +139,8 @@ alt-shift-i = 'move-node-to-workspace I --focus-follows-window'
 
 # see: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
-# see: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+# see: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
+alt-shift-tab = 'focus-monitor --wrap-around next'
 
 # see: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'

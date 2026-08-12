@@ -50,5 +50,22 @@ alias c="clear"
 alias e="exit"
 alias vim="nvim"
 
+# functions
+awsp() {
+  local p=${1:-$(aws configure list-profiles | fzf --height=40% --reverse)}
+  [[ -n $p ]] || return
+  export AWS_PROFILE=$p
+  aws sso login --profile "$p"
+}
+klfd() { kubectl logs -f "deployments/$1" "${@:2}"; }
+stern() {
+  if [[ $# -eq 1 ]]; then
+    command stern "$1" -c "$1"
+  else
+    command stern "$@"
+  fi
+}
+ctx() { starship module kubernetes; starship module aws; starship module azure; starship module gcloud; echo }
+
 # machine-specific overrides
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
