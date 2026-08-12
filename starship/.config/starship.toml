@@ -10,9 +10,7 @@ palette = "poimandres"
 # formats
 format = """
 $directory \
-${custom.giturl}\
 $git_branch\
-${custom.git_worktree}\
 $git_state\
 $git_status\
 $status\
@@ -137,96 +135,3 @@ sky       = "#ADD7FF"
 sapphire  = "#89DDFF"
 blue      = "#89DDFF"
 lavender  = "#91B4D5"
-
-[palettes.catppuccin_mocha]
-# --- background ---
-crust    = "#11111b"
-mantle   = "#181825"
-base     = "#1e1e2e"
-surface0 = "#313244"
-surface1 = "#45475a"
-surface2 = "#585b70"
-overlay0 = "#6c7086"
-overlay1 = "#7f849c"
-overlay2 = "#9399b2"
-# --- text ---
-text     = "#cdd6f4"
-subtext0 = "#a6adc8"
-subtext1 = "#bac2de"
-# --- accents ---
-rosewater = "#f5e0dc"
-flamingo  = "#f2cdcd"
-pink      = "#f5c2e7"
-mauve     = "#cba6f7"
-red       = "#f38ba8"
-maroon    = "#eba0ac"
-peach     = "#fab387"
-yellow    = "#f9e2af"
-green     = "#a6e3a1"
-teal      = "#94e2d5"
-sky       = "#89dceb"
-sapphire  = "#74c7ec"
-blue      = "#89b4fa"
-lavender  = "#b4befe"
-
-[palettes.tokyonight_night]
-# --- background ---
-crust    = "#16161e"
-mantle   = "#16161e"
-base     = "#1a1b26"
-surface0 = "#292e42"
-surface1 = "#3b4261"
-surface2 = "#414868"
-overlay0 = "#565f89"
-overlay1 = "#737aa2"
-overlay2 = "#9aa5ce"
-# --- text ---
-text     = "#c0caf5"
-subtext0 = "#a9b1d6"
-subtext1 = "#c0caf5"
-# --- accents ---
-rosewater = "#c0caf5"
-flamingo  = "#ff9e64"
-pink      = "#f7768e"
-mauve     = "#bb9af7"
-red       = "#f7768e"
-maroon    = "#f7768e"
-peach     = "#ff9e64"
-yellow    = "#e0af68"
-green     = "#9ece6a"
-teal      = "#7dcfff"
-sky       = "#7dcfff"
-sapphire  = "#7aa2f7"
-blue      = "#7aa2f7"
-lavender  = "#bb9af7"
-
-[palettes.gruvbox_dark]
-# --- background ---
-crust    = "#1d2021"
-mantle   = "#282828"
-base     = "#282828"
-surface0 = "#3c3836"
-surface1 = "#504945"
-surface2 = "#665c54"
-overlay0 = "#7c6f64"
-overlay1 = "#a89984"
-overlay2 = "#bdae93"
-# --- text ---
-text     = "#ebdbb2"
-subtext0 = "#d5c4a1"
-subtext1 = "#fbf1c7"
-# --- accents ---
-rosewater = "#fbf1c7"
-flamingo  = "#fe8019"
-pink      = "#d3869b"
-mauve     = "#d3869b"
-red       = "#cc241d"
-maroon    = "#fb4934"
-peach     = "#fe8019"
-yellow    = "#d79921"
-green     = "#98971a"
-teal      = "#8ec07c"
-sky       = "#8ec07c"
-sapphire  = "#83a598"
-blue      = "#458588"
-lavender  = "#d3869b"
