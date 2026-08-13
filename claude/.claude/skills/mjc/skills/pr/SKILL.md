@@ -20,7 +20,7 @@ before committing; unrelated or unpushed work on the tree → stop and ask.
 ## 1. Commit
 Author the subject per `rules/git.md`. Present 3 candidates via AskUserQuestion, each `label` the
 ENTIRE message and `description` empty, plus a 4th "None, propose 3 more". On pick,
-`touch "$HOME/.claude/.mjc-commit-ok"` in its own Bash call, then `git commit -m "<chosen>"` in a
+`touch ~/.claude/.mjc-commit-ok` in its own Bash call, then `git commit -m "<chosen>"` in a
 separate one — never chained, the hook checks the sentinel before a chained command runs.
 Re-touch (separately) to retry a rejected commit. Nothing staged → ask what to stage.
 

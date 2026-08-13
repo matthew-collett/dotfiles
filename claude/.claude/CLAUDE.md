@@ -39,8 +39,8 @@ These are my rules. They take precedence over the OMC layer at the bottom of thi
 - Never claim it works if you haven't verified it, say what you checked and what you didn't.
 
 ## Git & shell
-- Never run `git commit` yourself, and never create the `.mjc-commit-ok` sentinel: commits happen
-  only inside the commit skills, which I invoke.
+- Never run `git commit` yourself outside the commit skills I invoke, and never create the
+  `.mjc-commit-ok` sentinel except when one of those skills instructs it as part of its flow.
 - Never `cd` in Bash, pass the target dir as the command's path argument (`rg PATTERN <dir>`,
   `ls <dir>`, `find <dir>`) or use `git -C <dir>` / `make -C <dir>`.
 - Never read, print, or commit secrets: `.env` files, keys, tokens, credentials.
