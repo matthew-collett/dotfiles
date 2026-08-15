@@ -28,28 +28,47 @@ Re-touch (separately) to retry a rejected commit. Nothing staged → ask what to
 `git push origin "$(git branch --show-current)"` (never bare push).
 
 ## 3. Open the PR
-`gh pr create`, title = the commit subject, body = the template below. Summary is 1–2 sentences.
+`gh pr create`, title = the commit subject, body = the PR body template below. Summary is 1–2 sentences.
 Fill Testing only if the diff added unit tests; else leave it for me. Print the PR URL.
 
 ## 4. Tracker (jira)
 Only when `tracker.type` is `jira` and the branch has a key. Extract the key (`[A-Za-z]+-[0-9]+`) from
 the branch.
-- Comment the PR link on the ticket via Atlassian MCP `addCommentToJiraIssue` (cloudId from
-  `tracker.url`), `contentFormat: markdown`, body `PR: [<title>](<url>)`.
+- Comment on the ticket via Atlassian MCP `addCommentToJiraIssue` (cloudId from `tracker.url`),
+  `contentFormat: markdown`, body = the comment template below. The repo, branch, and PR values are
+  all links; each field sits on its own line.
 - Transition only if `tracker.statuses.pr` is set: `getTransitionsForJiraIssue`, pick the one whose
   target status matches it (case-insensitive), apply with `transitionJiraIssue`. No match from the
   current status → note it and skip.
 - Atlassian MCP unavailable → say so and skip.
-A second tracker later is a parallel `## 4. Tracker (linear)` block; nothing else changes.
+A second tracker later is a parallel `## 4. Tracker (linear)` block plus its own case in the tracker
+section below; nothing else changes.
 
-Body template:
+Comment template:
+
+    Repo: [<owner>/<repo>](https://github.com/<owner>/<repo>)
+    Branch: [<branch>](https://github.com/<owner>/<repo>/tree/<branch>)
+    PR: [<title>](<url>)
+
+    Testing/verification: see the PR description.
+
+PR body template:
 
     <summary, 1–2 sentences: the problem and the fix>
 
-    #### Ticket
-    [<KEY>](<tracker.url>/browse/<KEY>)
+    <tracker section, per the cases below>
 
     #### Testing
 
-The Ticket section appears only when a tracker's set and the branch has a key. Otherwise the body is
-summary + `#### Testing`, nothing else. No per-file breakdown, no extra headers.
+Tracker section by `tracker.type`. Omit it entirely — body is summary + `#### Testing` — when
+`tracker.type` is `none` or the branch carries no key.
+
+- `jira`:
+
+      #### Jira
+      [<KEY>](<tracker.url>/browse/<KEY>)
+
+The body is the template and nothing else: the summary, the tracker section, `#### Testing`. Add no
+other section, header, paragraph, or line — no per-file breakdown, no dependency notes, no caveats
+about what you did or didn't verify. Anything you think is worth saying beyond the template goes in
+chat, and I decide whether it belongs in the PR.

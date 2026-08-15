@@ -15,11 +15,14 @@ $git_state\
 $git_status\
 $status\
 $cmd_duration\
+$fill\
+$kubernetes\
 $line_break\
 $character\
 """
 
-# right_format = "$kubernetes"
+[fill]
+symbol = " "
 
 # directory
 [directory]
@@ -84,7 +87,7 @@ vimcmd_symbol = "[:](mauve)"
 disabled = false
 style = "bold #A78BFA"
 symbol = "\ue81d"
-format = "[$symbol $context(/$namespace) ]($style)"
+format = "[$symbol $context(/$namespace)]($style)"
 
 [aws]
 disabled = false

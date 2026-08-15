@@ -17,5 +17,6 @@
   "showUnsupportedFiles": true,
   "deleteUnlinkedAttachments": "always",
   "trashOption": "local",
-  "settingsPopoutWindow": false
+  "settingsPopoutWindow": false,
+  "readableLineLength": false
 }

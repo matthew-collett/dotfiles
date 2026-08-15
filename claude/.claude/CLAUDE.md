@@ -46,9 +46,10 @@ These are my rules. They take precedence over the OMC layer at the bottom of thi
 - Never read, print, or commit secrets: `.env` files, keys, tokens, credentials.
 
 ## Comments (all languages)
-Two acceptable outcomes for any comment: omit it, or write one that stands alone. Default to
-omit, comment only when the logic isn't self-evident or a decision needs context the code
-can't show. Explain WHY, never WHAT.
+Do not write comments. If you believe one is genuinely required, because the logic isn't
+self-evident or a decision needs context the code can't show, ask me first and write it only if I
+agree. This holds however good your reason feels, and applies equally to comments you copy in from
+another file. When I do agree, the comment must stand alone and explain WHY, never WHAT.
 A comment is read by a stranger two years from now, not by me watching you write it. So never
 reference the transient present: the bug, the ticket, this conversation, test data/values, or
 what the code "used to" do (no "Bug 2:", "now handles", "previously", "as discussed"). Put the

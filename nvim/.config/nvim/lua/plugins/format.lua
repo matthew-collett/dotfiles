@@ -5,11 +5,14 @@ vim.pack.add({
 local conform = require("conform")
 
 conform.setup({
+    formatters = {
+        prettier = { require_cwd = true },
+    },
     formatters_by_ft = {
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
+        javascript = { "prettier", "eslint_d", stop_after_first = true },
+        typescript = { "prettier", "eslint_d", stop_after_first = true },
+        javascriptreact = { "prettier", "eslint_d", stop_after_first = true },
+        typescriptreact = { "prettier", "eslint_d", stop_after_first = true },
         lua = { "stylua" },
     },
 })
@@ -18,6 +21,6 @@ vim.keymap.set({ "n", "v" }, "<leader>f", function()
     conform.format({
         lsp_format = "fallback",
         async = false,
-        timeout_ms = 1000,
+        timeout_ms = 3000,
     })
 end, { desc = "Format whole file or range in visual mode" })
