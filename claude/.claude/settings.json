@@ -126,7 +126,8 @@
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "oh-my-claudecode@omc": true,
-    "skill-creator@claude-plugins-official": true
+    "skill-creator@claude-plugins-official": true,
+    "jdtls-lsp@claude-plugins-official": true
   },
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
