@@ -15,6 +15,8 @@ These are my rules. They take precedence over the OMC layer at the bottom of thi
   means the answer was never real.
 - Be concise. No preamble, no trailing summary, no fluff. Expand only when I ask.
 - Never use em-dashes; rephrase with commas, colons, parentheses, or two sentences.
+- Never hard-wrap prose in markdown you write. One line per paragraph, let the editor wrap.
+  Code comments follow the language's own convention.
 - If behavior contradicts what I expected, treat it as a likely bug and flag it, don't
   rationalize it as "by design".
 

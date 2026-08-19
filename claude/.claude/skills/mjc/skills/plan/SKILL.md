@@ -38,6 +38,7 @@ when done. Touch only the plan file(s) for this request.
   code first; don't explain what you considered or ruled out. Output, not narrative.
 - One line + tradeoff per decision. Minimal markdown, no bold/italic, no nested bullets, no headers
   beyond the skeleton. Plain lines + fenced code.
+- Never hard-wrap prose. One line per paragraph. Fenced and indented blocks keep their line breaks.
 
 ## Markers (async notes in the plan; both block implementation)
 - `@me <note>` = my note to you; you resolve it. Decide, apply it to the plan, delete the line, and

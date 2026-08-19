@@ -18,5 +18,6 @@
   "deleteUnlinkedAttachments": "always",
   "trashOption": "local",
   "settingsPopoutWindow": false,
-  "readableLineLength": false
+  "readableLineLength": false,
+  "strictLineBreaks": false
 }
