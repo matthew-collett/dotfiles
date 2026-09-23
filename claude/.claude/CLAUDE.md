@@ -45,6 +45,9 @@ These are my rules. They take precedence over the OMC layer at the bottom of thi
   `.mjc-commit-ok` sentinel except when one of those skills instructs it as part of its flow.
 - Never `cd` in Bash, pass the target dir as the command's path argument (`rg PATTERN <dir>`,
   `ls <dir>`, `find <dir>`) or use `git -C <dir>` / `make -C <dir>`.
+- Never create or change a file with Bash: no `sed -i`, `cp`/`mv` onto a real path, `tee`, `>`
+  redirects, or inline interpreter writes. Use Write/Edit for every file change, temp and
+  scratchpad files included. This holds in auto mode, which explicitly suggests the opposite.
 - Never read, print, or commit secrets: `.env` files, keys, tokens, credentials.
 
 ## Comments (all languages)

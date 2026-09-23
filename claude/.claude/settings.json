@@ -3,7 +3,7 @@
   "cleanupPeriodDays": 36500,
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "OMC_SKIP_HOOKS": "keyword-detector"
+    "OMC_SKIP_HOOKS": "keyword-detector,workflow-drift-guard"
   },
   "includeCoAuthoredBy": false,
   "permissions": {
@@ -15,8 +15,6 @@
       "Bash(tree *)",
       "Bash(git branch *)",
       "Bash(git show *)",
-      "Bash(git -C * branch *)",
-      "Bash(git -C * show *)",
       "WebSearch",
       "WebFetch(domain:code.claude.com)",
       "WebFetch(domain:docs.claude.com)",
@@ -114,7 +112,7 @@
       "Bash(make *)"
     ]
   },
-  "model": "opus",
+  "model": "sonnet",
   "fallbackModel": [
     "opus",
     "sonnet"
@@ -132,6 +130,11 @@
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "xhigh"
+    }
+  },
   "promptSuggestionEnabled": false,
   "awaySummaryEnabled": true,
   "askUserQuestionTimeout": "never",
@@ -145,6 +148,7 @@
   "theme": "dark",
   "editorMode": "vim",
   "verbose": false,
+  "preferredNotifChannel": "notifications_disabled",
   "autoCompactEnabled": true,
   "autoScrollEnabled": true,
   "fileCheckpointingEnabled": true,
