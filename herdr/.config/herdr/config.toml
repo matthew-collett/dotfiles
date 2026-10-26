@@ -20,9 +20,11 @@ navigate_workspace_down = "ctrl+j"
 
 [[keys.command]]
 key = "prefix+shift+p"
-type = "shell"
+type = "popup"
 command = "~/scripts/herdr-project.sh"
 description = "New templated workspace"
+width = 60
+height = 3
 
 [ui]
 show_agent_labels_on_pane_borders = true

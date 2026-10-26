@@ -1,7 +1,7 @@
 # Git
 
 Single source of truth for git format across all repos. The commit skills defer here, do
-not restate these anywhere else. Format comes from `~/.claude/mjc.config.json` (`commit`, `tracker`);
+not restate these anywhere else. Format comes from `~/.claude/mjc.config.local.json` (`commit`, `tracker`);
 missing → conventional, no tracker.
 
 ## Trunk resolution

@@ -10,7 +10,7 @@ disable-model-invocation: true
 ## Status
 !`git status --short 2>/dev/null || true`
 
-Read `~/.claude/mjc.config.local.json` first for `commit` and `tracker`. The tracker step runs only when
+Read `~/.claude/mjc.config.local.json` first for `commit`, `tracker`, and `dirs.plans`. The tracker step runs only when
 `tracker.type` isn't `none` and the branch carries a key (`[A-Za-z]+-[0-9]+`); otherwise skip it.
 
 If Branch is NOT-A-REPO, ask which repo, then use `git -C <repo>` and `gh -R <owner>/<repo>`. If it's
@@ -40,6 +40,9 @@ the branch.
 - Transition only if `tracker.statuses.pr` is set: `getTransitionsForJiraIssue`, pick the one whose
   target status matches it (case-insensitive), apply with `transitionJiraIssue`. No match from the
   current status → note it and skip.
+- Multi-PR tickets: when the key's work spans several PRs (more than one plan file matching the key
+  under `dirs.plans`, or a plan that splits into several PRs), comment as normal but transition only
+  on the last of them; on earlier PRs say in chat that the transition is held. Can't tell → ask me.
 - Atlassian MCP unavailable → say so and skip.
 A second tracker later is a parallel `## 4. Tracker (linear)` block plus its own case in the tracker
 section below; nothing else changes.

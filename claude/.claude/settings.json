@@ -112,11 +112,25 @@
       "Bash(make *)"
     ]
   },
-  "model": "sonnet",
+  "model": "opus",
   "fallbackModel": [
     "opus",
     "sonnet"
   ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact|fork)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/Users/matthew.collett/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "node ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hud/omc-hud.mjs"
@@ -127,12 +141,16 @@
     "skill-creator@claude-plugins-official": true,
     "jdtls-lsp@claude-plugins-official": true
   },
+  "feedbackDrafts": "off",
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
   "modelSettings": {
     "claude-sonnet-5": {
-      "effortLevel": "xhigh"
+      "effortLevel": "high"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "high"
     }
   },
   "promptSuggestionEnabled": false,
@@ -152,7 +170,7 @@
   "autoCompactEnabled": true,
   "autoScrollEnabled": true,
   "fileCheckpointingEnabled": true,
-  "remoteControlAtStartup": true,
+  "remoteControlAtStartup": false,
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": false,
   "useAutoModeDuringPlan": false,
