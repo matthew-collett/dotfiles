@@ -31,9 +31,12 @@ when done. Touch only the plan file(s) for this request.
     ## Sequencing       (ordered implement steps)
 
 ## Content rules
-- New file or new function → full path + complete contents in a language-fenced block (```go,
-  ```ts), no diff. Changed function → the ENTIRE function as one ```diff block: every line shown,
-  only changed lines prefixed +/-. Never ellipsis.
+- Every fenced block has its own label line directly above it: the repo-relative path in
+  backticks, then what the block is, e.g. `collector/main.go`, `run`: or `internal/x/y.go`, new
+  function below `Z`:. Repeat the path on every block, even several in a row from one file; a
+  block never inherits its file from an earlier label. New file or new function → complete
+  contents in a language-fenced block (```go, ```ts), no diff. Changed function → the ENTIRE
+  function as one ```diff block: every line shown, only changed lines prefixed +/-. Never ellipsis.
 - The plan holds only final decisions and the code, not your thought process. Reason and read the
   code first; don't explain what you considered or ruled out. Output, not narrative.
 - One line + tradeoff per decision. Minimal markdown, no bold/italic, no nested bullets, no headers

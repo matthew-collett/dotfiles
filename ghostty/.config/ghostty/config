@@ -1,5 +1,5 @@
 theme = Poimandres
-background-opacity = 0.60
+background-opacity = 0.80
 background-blur-radius = 10
 background = #000000
 
@@ -21,7 +21,7 @@ confirm-close-surface = false
 window-decoration = auto
 window-padding-x = 10
 window-padding-y = 10
-window-padding-balance = true
+window-padding-balance = equal
 
 auto-update = check
 auto-update-channel = stable
