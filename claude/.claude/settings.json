@@ -16,6 +16,7 @@
       "Bash(git branch *)",
       "Bash(git show *)",
       "WebSearch",
+      "Agent",
       "WebFetch(domain:code.claude.com)",
       "WebFetch(domain:docs.claude.com)",
       "WebFetch(domain:platform.claude.com)",
@@ -101,7 +102,6 @@
     ],
     "ask": [
       "Bash(run_in_background:true)",
-      "Agent",
       "Bash(go build *)",
       "Bash(go test *)",
       "Bash(go run *)",
@@ -124,7 +124,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '/Users/matthew.collett/.claude/hooks/herdr-agent-state.sh' session",
+            "command": "bash \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/herdr-agent-state.sh\" session",
             "timeout": 10
           }
         ]
@@ -150,6 +150,9 @@
       "effortLevel": "high"
     },
     "claude-opus-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5-5": {
       "effortLevel": "high"
     }
   },
