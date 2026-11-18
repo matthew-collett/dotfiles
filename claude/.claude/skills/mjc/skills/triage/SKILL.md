@@ -10,7 +10,7 @@ READ-ONLY. Investigate and report; never edit files, write a plan, build, or com
 
 ## 1. Fetch the ticket
 Pull the key from the URL, or take it verbatim, then fetch via the tracker's API:
-- jira: load `mcp__atlassian__getJiraIssue` (ToolSearch `select:mcp__atlassian__getJiraIssue`); call it with `cloudId` from `tracker.url`, `responseContentFormat: markdown`, and `fields` including `comment`.
+- jira: load `mcp__atlassian__getJiraIssue` and `mcp__atlassian__listJiraIssueComments` (ToolSearch `select:mcp__atlassian__getJiraIssue,mcp__atlassian__listJiraIssueComments`). Call `getJiraIssue` with `cloudId` from `tracker.url`, `responseContentFormat: markdown`, `view: evidence`. It does not return comment bodies, so also call `listJiraIssueComments` with the same `cloudId` and `responseContentFormat`, paging with `startAt` until `isLast` is true.
 - (a second tracker later is a parallel bullet.)
 
 ## 2. Locate the code

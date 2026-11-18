@@ -34,11 +34,12 @@ Fill Testing only if the diff added unit tests; else leave it for me. Print the 
 ## 4. Tracker (jira)
 Only when `tracker.type` is `jira` and the branch has a key. Extract the key (`[A-Za-z]+-[0-9]+`) from
 the branch.
-- Comment on the ticket via Atlassian MCP `addCommentToJiraIssue` (cloudId from `tracker.url`),
-  `contentFormat: markdown`, body = the comment template below. The repo, branch, and PR values are
-  all links; each field sits on its own line.
-- Transition only if `tracker.statuses.pr` is set: `getTransitionsForJiraIssue`, pick the one whose
-  target status matches it (case-insensitive), apply with `transitionJiraIssue`. No match from the
+- Comment on the ticket via Atlassian MCP `addOrEditJiraIssueComment` (cloudId from `tracker.url`,
+  no `commentId`), `contentFormat: markdown`, `commentBody` = the comment template below. The repo,
+  branch, and PR values are all links; each field sits on its own line.
+- Transition only if `tracker.statuses.pr` is set: list transitions via `executeRead` with
+  `name: "listJiraIssueTransitions"`, pick the one whose target status (not transition name) matches
+  it (case-insensitive), apply its id with `transitionJiraIssue` `transitionId`. No match from the
   current status → note it and skip.
 - Multi-PR tickets: when the key's work spans several PRs (more than one plan file matching the key
   under `dirs.plans`, or a plan that splits into several PRs), comment as normal but transition only

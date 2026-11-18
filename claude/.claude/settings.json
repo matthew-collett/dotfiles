@@ -183,6 +183,7 @@
   "remoteControlNotifEnabled": true,
   "notificationVerbosity": "minimal",
   "workflowKeyboardTriggerEnabled": false,
+  "idleCompaction": false,
   "omcHud": {
     "elements": {
       "cwd": true,

@@ -47,7 +47,9 @@ defer/push back → a short, polite explanation). Show me the fixes made + all d
 if it's all good. Nothing below runs until I say yes, "looks good"/"ok" is not yes, so ask.
 
 ## 6. On yes, commit, reply, resolve, no more prompts
-1. WIP commit: `git add -A && git commit -m "chore: parking"`, then
+1. WIP commit: `touch ~/.claude/.mjc-commit-ok` in its own Bash call, then
+   `git add -A && git commit -m "chore: parking"` in a separate one — never chained, the hook checks the
+   sentinel before a chained command runs; re-touch (separately) to retry a rejected commit. Then
    `git push origin "$(git rev-parse --abbrev-ref HEAD)"`; grab `git rev-parse --short HEAD`.
 2. For each addressed thread, reply, then resolve:
    - `gh api --method POST repos/<owner>/<repo>/pulls/<pr>/comments/<top comment databaseId>/replies -f body='<text>'`

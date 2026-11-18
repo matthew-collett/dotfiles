@@ -49,6 +49,10 @@ These are my rules. They take precedence over the OMC layer at the bottom of thi
   redirects, or inline interpreter writes. Use Write/Edit for every file change, temp and
   scratchpad files included. This holds in auto mode, which explicitly suggests the opposite.
 - Never read, print, or commit secrets: `.env` files, keys, tokens, credentials.
+- Commands you give me to run use my shell aliases (oh-my-zsh kubectl plugin and my own). Look
+  them up first with `alias | grep -E "=['\"]?<command>"`, use the longest alias whose expansion
+  prefixes the command, and keep the rest as arguments: `kubectl get pods -n foo` → `kgp -n foo`.
+  Commands you run yourself stay unaliased.
 
 ## Comments (all languages)
 Do not write comments. If you believe one is genuinely required, because the logic isn't
